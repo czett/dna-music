@@ -7,11 +7,132 @@
         <script src="script.js" defer></script>
     </head>
     <body>
-        <textarea name="dna" id="dna" required></textarea>
-        <button id="playMelody">Play Melody</button>
-        <input type="range" name="pitch" id="pitch" min="0.25" max="5" value="1" step="0.25">
-        <label for="pitch">pitch</label>
-        <input type="range" name="speed" id="speed" min="0.25" max="5" value="1" step="0.25">
-        <label for="speed">speed</label>
+        <div class="form">
+            <div class="logo">dna-music</div>
+            <textarea name="dna" id="dna" required></textarea>
+            <button id="playMelody">Play Melody</button>
+            <div class="slider-label">
+                <label for="pitch">pitch:</label>
+                <input type="range" name="pitch" id="pitch" min="0.25" max="5" value="1" step="0.25">
+            </div>
+            <div class="slider-label">
+                <label for="speed">speed:</label>
+                <input type="range" name="speed" id="speed" min="0.25" max="5" value="1" step="0.25">
+            </div>
+        </div>
     </body>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Gabarito:wght@400..900&family=SUSE:wght@100..800&display=swap');
+
+        body, html{
+            margin: 0;
+            background-color: #2f4f4f;
+            position: relative;
+            height: 100vh;
+            width: 100vw;
+            overflow: hidden;
+        }
+
+        *{
+            color: antiquewhite;
+            font-family: 'Gabarito';
+            font-size: 1.5rem;
+        }
+
+        ::selection{
+            background: #FFA0CC;
+            color: antiquewhite;
+        }
+
+        .logo{
+            font-size: 5rem;
+            font-weight: 800;
+            font-family: 'SUSE';
+            margin-bottom: 3vh;
+            user-select: none;
+        }
+
+        .form{
+            position: absolute;
+            inset: 50% auto auto 50%;
+            transform: translate(-50%, -50%);
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        textarea{
+            background: transparent;
+            color: antiquewhite;
+            resize: none;
+            outline: none;
+            border: 2px solid antiquewhite;
+            box-sizing: border-box;
+            padding: 1vh;
+            width: 20vw;
+            border-radius: 1rem 1rem 0 0;
+            transition: 200ms;
+        }
+        
+        button{
+            transition: 500ms;
+            border-radius: 0 0 1rem 1rem;
+            margin-top: 1vh;
+            margin-bottom: 3vh;
+            background: transparent;
+            color: antiquewhite;
+            resize: none;
+            outline: none;
+            border: 2px solid antiquewhite;
+            box-sizing: border-box;
+            padding: 1vh;
+            width: 20vw;
+        }
+
+        button:hover, textarea:hover{
+            background: antiquewhite;
+            color: #2f4f4f;
+        }
+
+        .slider-label{
+            width: 80%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 2vh;
+        }
+
+        .slider-label label{
+            font-size: 1.2rem;
+        }
+
+        input[type="range"]{
+            width: 10vw;
+            box-sizing: border-box;
+            background: #2f4f4f;
+            height: 3vh;
+            appearance: none;
+            border: none;
+            outline: none;
+            padding: .75vh .5vh;
+            border: 2px solid antiquewhite;
+        }
+
+        input[type="range"]::-webkit-slider-thumb{
+            appearance: none;
+            height: 2vh;
+            aspect-ratio: 1;
+            background: antiquewhite
+        }        
+
+        #pitch{
+            border-radius: .5rem .5rem 0 0;
+        }
+
+        #speed{
+            border-radius: 0 0 .5rem .5rem;
+        }
+    </style>
 </html>
