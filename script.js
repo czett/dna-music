@@ -4,10 +4,34 @@ const audioContext = new (window.AudioContext || window.webkitAudioContext)();
 let map = {};
 
 function mapNotes(){
+    pitchmp = document.getElementById("pitch").value;
+    speed = document.getElementById("speed").value;
+
     map["a"] = 261.63 * pitchmp
     map["t"] = 293.66 * pitchmp
     map["g"] = 329.63 * pitchmp
     map["c"] = 349.23 * pitchmp
+}
+
+mapNotes()
+
+function randomMap(){
+    pitchmp = document.getElementById("pitch").value;
+    speed = document.getElementById("speed").value;
+    
+    map["a"] = 1000 * (Math.random() * 0.5) * pitchmp
+    map["t"] = 1000 * (Math.random() * 0.5) * pitchmp
+    map["g"] = 1000 * (Math.random() * 0.5) * pitchmp
+    map["c"] = 1000 * (Math.random() * 0.5) * pitchmp
+
+    console.log()
+}
+
+function standardMap(){
+    pitchmp = document.getElementById("pitch").value;
+    speed = document.getElementById("speed").value;
+    
+    mapNotes();
 }
 
 // funcs
@@ -34,8 +58,6 @@ function playNote(frequency, startTime, duration) {
 function makeMelody(){
     pitchmp = document.getElementById("pitch").value;
     speed = document.getElementById("speed").value;
-
-    mapNotes();
 
     ta = document.getElementById("dna");
     let melody = [];
@@ -66,3 +88,5 @@ function playMelody(melody) {
 }
 
 document.getElementById('playMelody').addEventListener('click', playMelody);
+document.getElementById('randomMap').addEventListener('click', randomMap);
+document.getElementById('standardMap').addEventListener('click', standardMap);
