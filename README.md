@@ -1,6 +1,6 @@
 ![banner where?](https://github.com/czett/dna-music/blob/main/deps/banner.png)
 
-# DNA Music Generator
+# DNA Music Generator ([dna-music.vercel.app](https://dna-music.vercel.app/))
 
 Welcome to the **DNA Music Generator**! This project allows you to input a DNA sequence and hear it transformed into a melody. The nucleotide bases (A, T, G, C) are mapped to musical notes and played back using the Web Audio API.
 
